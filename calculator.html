@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Calculator</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="Style.css" />
+    </head>
+    <body>
+            
+        <div id="resultShow" class="resultShow"></div>
+    <div id="calculator" class="calculator">
+
+        <button id="clear" onclick="reset()" class="clear">C</button>
+
+  <div id="viewer" class="viewer">0</div>
+
+  <button class="num" id="7" onclick=onButtonClick(id) data-num="7">7</button>
+  <button class="num" id="8" onclick=onButtonClick(id) data-num="8">8</button>
+  <button class="num" id="9" onclick=onButtonClick(id) data-num="9">9</button>
+  <button data-ops="plus" onclick="addition()" class="ops">+</button>
+
+  <button class="num" id="4" onclick=onButtonClick(id) data-num="4">4</button>
+  <button class="num" id="5" onclick=onButtonClick(id) data-num="5">5</button>
+  <button class="num" id="6" onclick=onButtonClick(id) data-num="6">6</button>
+  <button data-ops="minus" onclick="substraction()" class="ops">-</button>
+
+  <button class="num" id="1" onclick=onButtonClick(id) data-num="1">1</button>
+  <button class="num" id="2" onclick=onButtonClick(id) data-num="2">2</button>
+  <button class="num" id="3" onclick=onButtonClick(id) data-num="3">3</button>
+  <button data-ops="times" onclick="multiply()" class="ops">*</button>
+
+  <button class="num" id="0" onclick=onButtonClick(id) data-num="0">0</button>
+  <button class="num" data-num="."></button>
+  <button  onclick="equal()" onclick="equal()" class="ops">=</button>
+  <button data-ops="divided by" onclick="devide()" class="ops">/</button>
+  
+  
+</div>
+
+
+           
+    </body>
+    <script src="main.js"></script>
+</html>
+
+
+
+
