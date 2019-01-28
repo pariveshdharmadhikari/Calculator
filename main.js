@@ -20,6 +20,7 @@ function merge() {
 
     if (flag === "add") {
         number += intNumber;
+        condition=number;
         intNumber = 0;
         buffer.splice(0, buffer.length);
         document.getElementById('viewer').innerHTML = number;
@@ -28,12 +29,14 @@ function merge() {
     else if (flag === "sub") {
         if (number === 0) {
             number = intNumber;
+            condition=number;
             intNumber = 0;
             buffer.splice(0, buffer.length);
             document.getElementById('viewer').innerHTML = number;
         }
         else {
             number -= intNumber;
+            condition=number;
             intNumber = 0;
             buffer.splice(0, buffer.length);
             document.getElementById('viewer').innerHTML = number;
@@ -41,18 +44,13 @@ function merge() {
     }
     else if (flag === "mul") {
 
-        if (number === 0 && intNumber === 0) {
-            number = intNumber;
-            buffer.splice(0, buffer.length);
-            document.getElementById('viewer').innerHTML = '0';
-        }
-        else if (number === 0) {
-            number = intNumber;
+        
+       if (number === 0) {
+            number = intNumber; 
             buffer.splice(0, buffer.length);
             document.getElementById('viewer').innerHTML = '';
         }
         else {
-
 
             number *= intNumber;
             intNumber = 1;
@@ -65,15 +63,22 @@ function merge() {
         if (number === 0) {
 
             number = intNumber;
+            buffer.splice(0, buffer.length);
+            document.getElementById('viewer').innerHTML = '';
 
         }
         else {
-            console.log(number);
-            console.log(intNumber)
+            if(intNumber===0)
+            {
+               
+            }
+            else
+            {
             number /= intNumber;
-            console.log(number)
+            intNumber=1;
             buffer.splice(0, buffer.length);
             document.getElementById('viewer').innerHTML = number;
+            }    
         }
     }
 
