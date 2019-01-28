@@ -1,7 +1,22 @@
-//document.addEventListener('keypress',function(event){
-//    var code=event.keyCode;
-//    document.getElementById('viewer').innerHTML=code;
-//})
+// document.addEventListener('keypress', function (event) {
+//     var code = event.keyCode;
+//     alert("hi");
+// })  
+
+document.body.addEventListener("keydown", keyDownTextField, false);
+
+function keyDownTextField(e) {
+    var keyCode = e.key;
+    
+     if (e.keyCode == 8) {
+        reset();
+     }
+    if(!isNaN(keyCode))
+    {
+        onButtonClick1(keyCode);
+    }
+
+}
 var number = 0;
 var stringNumber, printString;
 var intNumber = 0;
@@ -9,7 +24,8 @@ var buffer = [];
 var flag = "default";
 var condition;
 
-function onButtonClick(ids) {
+function onButtonClick1(ids) {
+
     buffer.push(ids);
     stringNumber = printString = buffer.join('');
     intNumber = parseInt(stringNumber, 10);
@@ -20,7 +36,7 @@ function merge() {
 
     if (flag === "add") {
         number += intNumber;
-        condition=number;
+        condition = number;
         intNumber = 0;
         buffer.splice(0, buffer.length);
         document.getElementById('viewer').innerHTML = number;
@@ -29,14 +45,14 @@ function merge() {
     else if (flag === "sub") {
         if (number === 0) {
             number = intNumber;
-            condition=number;
+            condition = number;
             intNumber = 0;
             buffer.splice(0, buffer.length);
             document.getElementById('viewer').innerHTML = number;
         }
         else {
             number -= intNumber;
-            condition=number;
+            condition = number;
             intNumber = 0;
             buffer.splice(0, buffer.length);
             document.getElementById('viewer').innerHTML = number;
@@ -44,9 +60,9 @@ function merge() {
     }
     else if (flag === "mul") {
 
-        
-       if (number === 0) {
-            number = intNumber; 
+
+        if (number === 0) {
+            number = intNumber;
             buffer.splice(0, buffer.length);
             document.getElementById('viewer').innerHTML = '';
         }
@@ -68,17 +84,15 @@ function merge() {
 
         }
         else {
-            if(intNumber===0)
-            {
-               
+            if (intNumber === 0) {
+
             }
-            else
-            {
-            number /= intNumber;
-            intNumber=1;
-            buffer.splice(0, buffer.length);
-            document.getElementById('viewer').innerHTML = number;
-            }    
+            else {
+                number /= intNumber;
+                intNumber = 1;
+                buffer.splice(0, buffer.length);
+                document.getElementById('viewer').innerHTML = number;
+            }
         }
     }
 
