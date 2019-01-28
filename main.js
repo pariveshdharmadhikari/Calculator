@@ -13,10 +13,10 @@ function keyDownTextField(e) {
      }
     if(!isNaN(keyCode))
     {
-        onButtonClick1(keyCode);
-    }
+        onButtonClick(keyCode);
+   }
 
-}
+ }
 var number = 0;
 var stringNumber, printString;
 var intNumber = 0;
@@ -24,7 +24,7 @@ var buffer = [];
 var flag = "default";
 var condition;
 
-function onButtonClick1(ids) {
+function onButtonClick(ids) {
 
     buffer.push(ids);
     stringNumber = printString = buffer.join('');
